@@ -433,11 +433,9 @@ const Footer = () => {
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           <div className="space-y-4">
-            <img
-              src="/logo.png"
-              alt="Casino Liquidator"
-              className="h-8 w-auto"
-            />
+            <div className="text-2xl font-bold text-on-background font-headline tracking-tighter uppercase">
+              CASINO <span className="text-primary">LIQUIDATOR</span>
+            </div>
             <p className="text-on-surface-variant/50 text-[10px] uppercase tracking-[0.3em] font-headline">
               © 2024 CASINO LIQUIDATOR. ALL RIGHTS RESERVED.
             </p>

@@ -105,9 +105,11 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md py-3 shadow-2xl' : 'bg-transparent py-5'}`}>
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-headline font-bold tracking-tighter uppercase text-on-background">
-          CASINO <span className="text-primary">LIQUIDATOR</span>
-        </div>
+        <img
+          src="/logo.png"
+          alt="Casino Liquidator"
+          className="h-10 md:h-12 w-auto"
+        />
         
         <div className="hidden md:flex gap-10 items-center font-headline text-xs font-bold tracking-widest uppercase">
           <a href="#" className="text-primary border-b-2 border-primary pb-1">Inventory</a>
@@ -431,9 +433,11 @@ const Footer = () => {
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           <div className="space-y-4">
-            <div className="text-2xl font-bold text-on-background font-headline tracking-tighter uppercase">
-              CASINO <span className="text-primary">LIQUIDATOR</span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Casino Liquidator"
+              className="h-8 w-auto"
+            />
             <p className="text-on-surface-variant/50 text-[10px] uppercase tracking-[0.3em] font-headline">
               © 2024 CASINO LIQUIDATOR. ALL RIGHTS RESERVED.
             </p>

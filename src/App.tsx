@@ -133,11 +133,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-10"
         >
-          <div className="inline-flex items-center gap-2.5 bg-tertiary text-on-tertiary px-4 py-1.5 rounded-md font-headline font-bold text-[10px] tracking-widest uppercase">
-            <Star size={14} fill="currentColor" />
-            Exclusive: High-Yield Casino Assets
-          </div>
-          
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-headline font-bold leading-[0.85] tracking-tighter uppercase">
             THE <span className="text-primary italic">CASINO</span><br />FLIP.
           </h1>

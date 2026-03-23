@@ -219,8 +219,8 @@ const Hero = () => {
                 <Gift size={20} className="text-primary" />
               </div>
               <div>
-                <h3 className="font-headline font-bold text-sm uppercase text-on-surface">Free Entry + Buyer's Guide</h3>
-                <p className="text-on-surface-variant text-xs mt-1">Register now and get free admission plus a $50 gift on arrival</p>
+                <h3 className="font-headline font-bold text-sm uppercase text-on-surface">Get the Inventory List</h3>
+                <p className="text-on-surface-variant text-xs mt-1">Register now for the full inventory list and a free gift upon arrival</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
@@ -275,7 +275,7 @@ const Hero = () => {
                 </div>
                 <h2 className="text-2xl md:text-3xl font-headline font-bold uppercase tracking-tight text-primary">You're Registered!</h2>
                 <p className="text-on-surface-variant text-base font-body">
-                  Check your email for event details and your free buyer's guide. See you at the sale!
+                  Check your email for the inventory list and event details. See you at the sale!
                 </p>
                 <button
                   onClick={() => setSubmitStatus('idle')}
@@ -291,8 +291,8 @@ const Hero = () => {
                     <Star size={12} fill="currentColor" />
                     <span className="text-[10px] font-headline font-bold uppercase tracking-widest">Limited Spots</span>
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-headline font-bold uppercase tracking-tight">Claim Your Free Pass</h2>
-                  <p className="text-on-surface-variant text-sm mt-2 font-body">Register now to secure your spot and get a free $50 gift on arrival</p>
+                  <h2 className="text-2xl md:text-3xl font-headline font-bold uppercase tracking-tight">Get the Inventory List</h2>
+                  <p className="text-on-surface-variant text-sm mt-2 font-body">Register now to receive the full inventory list and a free gift upon arrival</p>
                 </div>
 
                 <form className="space-y-5" onSubmit={handleSubmit}>
@@ -360,6 +360,21 @@ const Hero = () => {
 
 const EliteAssets = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % ELITE_ASSETS.length);
+      if (scrollRef.current) {
+        const itemWidth = scrollRef.current.children[0]?.clientWidth || 0;
+        const gap = 32;
+        const scrollPosition = ((currentIndex + 1) % ELITE_ASSETS.length) * (itemWidth + gap);
+        scrollRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -582,7 +597,7 @@ const CTASection = () => {
             <div className="text-sm font-headline uppercase tracking-widest text-on-surface-variant">Entry Pass</div>
           </div>
           <div className="space-y-2">
-            <div className="text-4xl font-headline font-bold text-primary">$50</div>
+            <div className="text-4xl font-headline font-bold text-primary">FREE</div>
             <div className="text-sm font-headline uppercase tracking-widest text-on-surface-variant">Gift on Arrival</div>
           </div>
           <div className="space-y-2">
